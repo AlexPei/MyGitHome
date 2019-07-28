@@ -11,8 +11,8 @@ COPY . /app
 # 安装pip库
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
  
-# 暴露81端口
-EXPOSE 81
+# 暴露80端口
+EXPOSE 80
  
 # 定义环境变量
 ENV NAME World
