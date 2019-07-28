@@ -23,4 +23,5 @@ if __name__ == '__main__':
     #启动一个应用服务器，来接受用户的请求
     #while True:
     #  listen()
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=81)
