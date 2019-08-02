@@ -1,19 +1,19 @@
 FROM python:3
 
-# å®‰è£… Nodejs
+# °²×° Nodejs
 RUN apt update && curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt install -y nodejs
 
-# å®‰è£… jupyterlab
+# °²×° jupyterlab
 RUN python -m pip install jupyterlab
 
-# å®‰è£… jupyterlab æ’ä»¶
+# °²×° jupyterlab ²å¼ş
 RUN jupyter labextension install @jupyterlab/git && pip install jupyterlab-git && jupyter serverextension enable --py jupyterlab_git
 
-# è®¾ç½®é»˜è®¤ç¯å¢ƒå˜é‡
+# ÉèÖÃÄ¬ÈÏ»·¾³±äÁ¿
 ENV NOTEBOOK_APP_TOKEN=anoyi NOTEBOOK_DIR=/home
 
-# æš´éœ²ç«¯å£å·
+# ±©Â¶¶Ë¿ÚºÅ
 EXPOSE 8888
 
-#  è¿è¡Œ jupyterlab
+#  ÔËĞĞ jupyterlab
 CMD jupyter lab --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token=${NOTEBOOK_APP_TOKEN} --notebook-dir=${NOTEBOOK_DIR}
