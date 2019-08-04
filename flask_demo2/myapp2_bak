@@ -1,0 +1,32 @@
+from flask import Flask
+import datetime
+#¿¿¿¿¿flask¿¿
+#flask()
+#¿¿¿¿¿¿¿¿__name__
+#1¿¿flask¿¿¿¿¿¿¿
+#2¿¿flask¿¿ ¿¿ Fask_Sqlalchemy¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+myapp2 = Flask(__name__)
+
+##app.route¿¿¿¿¿
+##@¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+##¿¿¿¿¿¿¿¿¿¿¿¿¿URL¿¿¿¿¿¿¿¿
+##127.0.0.1:5000/  --->¿¿¿¿¿ hell_world¿¿¿¿¿¿¿¿¿¿¿¿¿
+
+
+@myapp2.route('/')
+def index():
+    return'<h1>¿¿¿¿¿flask¿¿¿~~t/Hello World</h1>'
+
+@myapp2.route('/time',methods=['post','get'])
+def get_time():
+    now=str(datetime.datetime.now())#¿¿¿¿¿¿¿¿¿¿¿
+    return '¿¿¿¿¿¿:%s'%now
+    
+##¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿app.run()
+if __name__ == '__main__':
+    #¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+    #while True:
+    #  listen()
+    #myapp2.run(debug=True)
+    myapp2.run(host='0.0.0.0', port=82)
+#http://0.0.0.1:8888/time
